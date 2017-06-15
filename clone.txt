@@ -1,0 +1,8 @@
+#从远程克隆
+1、在github，创建新的仓库，名字为gitskills
+2、勾选 Initialize this repository with a README，
+	这样GitHub会自动为我们创建一个README.md文件。
+3、$ git clone git@github.com:mecho666/gitskills.git #克隆
+4、$ cd gitskills
+5、$ ls
+	README.md
