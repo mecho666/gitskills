@@ -10,3 +10,6 @@
 合并某分支到当前分支：git merge <name>
 
 删除分支：git branch -d <name>
+
+用带参数的git log也可以看到分支的合并情况图
+$ git log --graph --pretty=oneline --abbrev-commit  
