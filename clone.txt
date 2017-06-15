@@ -6,3 +6,4 @@
 4、$ cd gitskills
 5、$ ls
 	README.md
+创建了一个分支dev
