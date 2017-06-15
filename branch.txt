@@ -26,3 +26,20 @@ master分支应该是非常稳定的，也就是仅用来发布新版本,平时�
 每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。
 
 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
+
+######修复BUG########
+修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。
+
+$ git stash             （在dev分支上）把当前工作现场储藏起来
+$ git checkout master    切换分支
+$ git checkout -b issue-101  再当前分支上创建临时分支，修复bug
+$ git add readme.txt      修复后，添加到暂存区
+$ git commit -m "fix bug 101"    提交
+$ git checkout master    切换分支
+$ git merge --no-ff -m "merged bug fix 101" issue-101     合并分支
+$ git checkout dev       切换分支
+$ git stash list          查看保存的工作现场
+$ git stash pop          恢复工作现场并删除stash内容
+【也可以使用git stash apply   
+            git stash drop】
