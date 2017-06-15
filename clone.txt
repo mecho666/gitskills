@@ -6,4 +6,11 @@
 4、$ cd gitskills
 5、$ ls
 	README.md
+####
+<<<<<<< HEAD
 在master分支上操作
+=======
+创建了一个分支dev
+>>>>>>> dev
+#####
+修改冲突
