@@ -1,0 +1,35 @@
+##########创建标签########
+$ git tag v1.0
+
+#如果忘记打标签，想在以前的打标签，方法是找到历史的commit id，打上标签
+$ git log --pretty=online --abbrev-commit
+$ git tag v1.2 3535215  #后跟commit id
+
+#查看标签(标签是按字母排序)
+$ git tag
+
+#查看标签信息
+$ git show v1.2
+
+#创建带有说明的标签  -a 指定标签名  -m 制定说明文字
+$ git tag -a v1.2 -m "version 0.1 released"  36546521
+
+#还可通过-s 用私钥签名一个标签
+$ git tag -s v1.3 -m "xxxxxx" 5865545
+
+签名采用PGP签名，必须首先安装gpg  (后期学习)
+
+
+#######操作标签########
+#删除标签
+$ git tag -d v1.0
+
+#推送标签   git push origin +标签名
+$ git push origin v1.0
+
+#一次性推送全部未推送标签
+$ git push origin --tags
+
+#如果标签已推送，想要删除，要先删本地，再删远程
+$ git tag -d v1.0
+$ git push origin :refs/tags/v1.0
