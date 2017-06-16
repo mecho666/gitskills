@@ -1,0 +1,15 @@
+#多人协作
+克隆后，要想再dev分支上开发，就超现实创建远程origin的dev分支到本地
+$ git checkout -b dev origin/dev
+…………
+修改后，push 分支到远程
+$ git push origin dev
+
+如果此时有人和你一同push，则会冲突 利用git pull 把最新的提交抓取下来，
+然后在本地合并，再推送
+$ git pull
+
+如果git pull 也失败，原因是没有指定本地dev分支与远程origin/分支的链接
+$ git branch --set-upstream dev origin/dev
+
+$ git pull
